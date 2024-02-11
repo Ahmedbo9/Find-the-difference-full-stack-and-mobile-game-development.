@@ -1,0 +1,25 @@
+<div class="dialog" [ngClass]="{ 'indigo-pink-theme': currentTheme === 'Default', 'deeppurple-amber-theme': currentTheme === 'Alternative' }">
+    <h2 mat-title>{{ 'CONFIRM_CREATE_DIALOG.TITLE' | translate }}</h2>
+    <mat-card-content [innerHTML]="'CONFIRM_CREATE_DIALOG.MESSAGE' | translate: { nbDifference: this.data.nbDifference }"></mat-card-content>
+    <canvas width="640px" height="480px" id="imageDifference" #imageDifference></canvas>
+    <form [formGroup]="this.form">
+        <mat-form-field>
+            <input matInput type="text" placeholder="Nom du jeu" formControlName="name" maxlength="20" />
+        </mat-form-field>
+        <mat-error *ngIf="!this.form.valid">{{ 'CONFIRM_CREATE_DIALOG.ERROR' | translate }}</mat-error>
+    </form>
+    <mat-dialog-actions>
+        <button color="primary" mat-button mat-dialog-close>{{ 'CONFIRM_CREATE_DIALOG.CANCEL' | translate }}</button>
+        <button
+            type="button"
+            mat-raised-buttonS
+            mat-dialog-close
+            color="primary"
+            [disabled]="!this.form.valid"
+            (click)="this.createGame()"
+            type="submit"
+        >
+            {{ 'CONFIRM_CREATE_DIALOG.CREATE' | translate }}
+        </button>
+    </mat-dialog-actions>
+</div>

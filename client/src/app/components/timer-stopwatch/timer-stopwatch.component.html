@@ -1,0 +1,9 @@
+<section class="timer">
+    <div class="timer-clock">
+        <mat-icon class="clock-icon" [ngStyle]="{ color: !needFeedbackAnimation() ? 'black' : 'red' }">timer</mat-icon>
+        <p *ngIf="!needFeedbackAnimation(); else elseBlock">{{ !isReplayMode() ? timerDisplay : getTimeFromReplay() }}</p>
+        <ng-template #elseBlock>
+            <p class="timer-red">{{ !isReplayMode() ? timerDisplay : getTimeFromReplay() }}</p>
+        </ng-template>
+    </div>
+</section>

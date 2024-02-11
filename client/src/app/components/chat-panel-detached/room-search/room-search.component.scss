@@ -1,0 +1,19 @@
+.room-search {
+    width: 100%;
+    height: 100%;
+    //scroll on overflow
+    // overflow-y: scroll;
+}
+
+.toolbar {
+    position: sticky;
+    top: 0;
+}
+
+.content {
+    // display: flex;
+    // flex-direction: column;
+    //height 100% minus toolbar height
+    height: calc(100% - 64px);
+    overflow: hidden;
+}

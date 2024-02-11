@@ -1,0 +1,19 @@
+<main>
+    <app-page-header
+        [headerMessage]="this.title"
+        [isAvatarEnabled]="false"
+        [isHomeButtonEnabled]="false"
+        [isSignOutButtonEnabled]="false"
+        [isExitButtonEnabled]="true"
+    >
+    </app-page-header>
+    <div class="main-wrapper">
+        <div class="game-section">
+            <app-sidebar></app-sidebar>
+            <section class="container">
+                <app-play-area class="play-area" tabindex="0" [gameId]="this.gameInfoHandlerService.roomId"></app-play-area>
+            </section>
+        </div>
+    </div>
+    <app-replay-bar *ngIf="isReplayToggled"></app-replay-bar>
+</main>

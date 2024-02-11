@@ -1,0 +1,8 @@
+<main>
+    <h2 *ngIf="isClassic()">{{ 'REDIRECT_DIALOG.CLASSIC|translate' }}</h2>
+    <h2 *ngIf="!isClassic()">{{ 'REDIRECT_DIALOG.NOT_CLASSIC|translate' }}</h2>
+    <div [innerHTML]="'REDIRECT_DIALOG.REASON' | translate: { reason: reason }" mat-dialog-content></div>
+    <div mat-dialog-actions align="end">
+        <button mat-raised-button mat-dialog-close cdkFocusInitial color="primary">OK</button>
+    </div>
+</main>

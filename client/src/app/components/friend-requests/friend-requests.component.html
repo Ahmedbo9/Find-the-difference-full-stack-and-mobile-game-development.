@@ -1,0 +1,27 @@
+<div class="friend-requests-container">
+    <h2>{{ 'FRIENDS.FRIENDS_REQUEST' | translate }}</h2>
+    <div *ngIf="(receivedFriendRequests$ | async)?.length; else noRequests">
+        <mat-card class="requests-list">
+            <mat-card-content *ngFor="let request of receivedFriendRequests$ | async" class="request-item">
+                <ng-container *ngIf="request.from && userDetailsMap[request.from]">
+                    <div class="user-details">
+                        <img mat-card-avatar [src]="userDetailsMap[request.from].photoURL" alt="User Photo" />
+                        <span class="user-name">{{ userDetailsMap[request.from].displayName }}</span>
+                    </div>
+                    <div class="actions">
+                        <button mat-raised-button color="primary" (click)="acceptRequest(request)">
+                            {{ 'FRIENDS.ACCEPTE_REQUEST' | translate }}
+                        </button>
+                        <button mat-raised-button color="warn" (click)="declineRequest(request)">{{ 'FRIENDS.REFUSE_REQUEST' | translate }}</button>
+                    </div>
+                </ng-container>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<ng-template #noRequests>
+    <mat-card>
+        <mat-card-content>{{ 'FRIENDS.EMPTY_REQUEST' | translate }}</mat-card-content>
+    </mat-card>
+</ng-template>

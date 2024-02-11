@@ -1,0 +1,31 @@
+#canvas {
+    z-index: 0;
+    box-sizing: border-box;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px, rgba(0, 0, 0, 0.45) 0px 1px 3px;
+    width: 640px;
+    height: 480px;
+}
+
+#img {
+    position: absolute;
+    z-index: -1;
+}
+
+#noContentCanvas {
+    position: absolute;
+    z-index: -2;
+}
+.canvas-container {
+    width: 640px;
+    height: 480px;
+}
+app-rectangle-outline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2; /* Adjust the z-index value to ensure it's higher than the canvas elements */
+}
+.mouse-bucket {
+    cursor: url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200'), auto;
+}

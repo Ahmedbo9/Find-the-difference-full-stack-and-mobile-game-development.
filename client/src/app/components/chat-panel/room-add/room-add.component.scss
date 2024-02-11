@@ -1,0 +1,49 @@
+.search {
+    width: 100%;
+    color: black;
+    position: sticky;
+}
+
+.search-lsbel {
+    color: black;
+}
+
+.room:hover {
+    cursor: pointer;
+}
+
+.search-input {
+    color: black;
+}
+.selected {
+    //background color a little darker grey
+    background-color: #e0e0e0;
+}
+
+.join-button {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+}
+
+// .room-list {
+//     // max-height: 55%;
+//     // display: flex;
+//     // flex-flow: column nowrap;
+//     //scroll on overflow
+//     display: block;
+//     overflow-block: scroll;
+//     flex: 1 1 auto;
+// }
+
+.wrapper {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.list-container {
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+}

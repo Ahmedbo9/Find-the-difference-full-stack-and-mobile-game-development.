@@ -1,0 +1,41 @@
+<div class="main">
+    <app-page-header
+        [isSignOutButtonEnabled]="false"
+        [isExitButtonEnabled]="true"
+        [headerMessage]="'CREATE_GAME_PAGE.HEADER_MESSAGE' | translate"
+    ></app-page-header>
+    <div class="space-under-title-bar"></div>
+    <form [formGroup]="this.form" (ngSubmit)="isGameValid()">
+        <div class="img-container">
+            <div class="drawImg">
+                <label for="imgDiff">{{ 'CREATE_GAME_PAGE.DRAWING_BOARD' | translate }}</label>
+                <app-draw-canvas [canvasType]="canvasType.Left" id="imgDiff"></app-draw-canvas>
+                <app-tool-box [canvasType]="canvasType.Left" class="toolbox-specific" [ngStyle]="{ 'width.vw': 30 }"></app-tool-box>
+            </div>
+            <app-central-tool-box></app-central-tool-box>
+            <div class="drawImg">
+                <label for="imgSource">{{ 'CREATE_GAME_PAGE.DRAWING_BOARD_2' | translate }}</label>
+                <app-draw-canvas [canvasType]="canvasType.Right" id="imgSource"></app-draw-canvas>
+                <app-tool-box [canvasType]="canvasType.Right" class="toolbox-specific" [ngStyle]="{ 'width.vw': 30 }"></app-tool-box>
+            </div>
+        </div>
+        <div class="space-between-canvas-and-tools"></div>
+        <div class="common-toolbox-container">
+            <app-common-tool-box [canvasType]="canvasType.Both"></app-common-tool-box>
+        </div>
+        <div class="submission-container">
+            <div class="submission-box">
+                <mat-form-field>
+                    <mat-label>{{ 'CREATE_GAME_PAGE.HEADER_MESSAGE' | translate }}</mat-label>
+                    <select matNativeControl id="expansionRadius" formControlName="expansionRadius">
+                        <option value="0">{{ 'CREATE_GAME_PAGE.RADIUS.VALUE0' | translate }}</option>
+                        <option value="3" selected>{{ 'CREATE_GAME_PAGE.RADIUS.VALUE3' | translate }}</option>
+                    </select>
+                </mat-form-field>
+                <button mat-flat-button color="primary" (click)="this.isGameValid()" #onSubmit type="button">
+                    {{ 'CREATE_GAME_PAGE.VALIDATE' | translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+<div class="grid-container statistique">
+    <div class="profil-container">
+        <div class="user-container">
+            <div class="profile">
+                <h1>{{ 'STATISTICS.TITLE' | translate }}</h1>
+            </div>
+            <div class="statistic-layout">
+                <button class="profil-btn" mat-raised-button color="primary">{{ 'STATISTICS.PLAYED_GAMES' | translate }}</button>
+                <div class="statistic-info" mat-raised-button color="secondary">
+                    <span *ngIf="user$ | async as user">
+                        <strong>{{ user.gamePlayed }}</strong>
+                    </span>
+                </div>
+            </div>
+            <div class="statistic-layout">
+                <button class="profil-btn" mat-raised-button color="primary">{{ 'STATISTICS.WON_GAMES' | translate }}</button>
+                <div class="statistic-info" mat-raised-button color="secondary">
+                    <span *ngIf="user$ | async as user">
+                        <strong>{{ user.gameWins }}</strong>
+                    </span>
+                </div>
+            </div>
+            <div class="statistic-layout">
+                <button class="profil-btn" mat-raised-button color="primary">{{ 'STATISTICS.AVERAGE_DiFFERENCE' | translate }}</button>
+                <div class="statistic-info" mat-raised-button color="secondary">
+                    <span *ngIf="user$ | async as user">
+                        <strong>{{ averageDiffFoundByGame }}</strong>
+                    </span>
+                </div>
+            </div>
+            <div class="statistic-layout">
+                <button class="profil-btn" mat-raised-button color="primary">{{ 'STATISTICS.AVERAGE_TIME' | translate }}</button>
+                <div class="statistic-time" mat-raised-button color="secondary">
+                    <span *ngIf="user$ | async as user">
+                        <strong>{{ averageTimePlayedByGame }}</strong>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<app-page-header></app-page-header>
+<div class="grid-container">
+    <div class="grid-item">
+        <h3 class="game-title">
+            {{ 'MAINPAGE.TITLE' | translate }}
+            <img src="assets/logoJdD.png" class="game-logo" alt="logo pour le jeux de différences" />
+        </h3>
+
+        <div class="user-name" *ngIf="user$ | async as user">Bienvenue, {{ user.displayName }}!</div>
+
+        <ul class="container-buttons">
+            <button class="optionsButton" mat-flat-button color="primary" (click)="toggleGameOptions()">{{ 'MAINPAGE.CLASSIC' | translate }}</button>
+            <li>
+                <button mat-flat-button class="optionsButton" color="primary" (click)="onClickPlayLimited()">
+                    {{ 'MAINPAGE.LIMITED_TIME' | translate }}
+                </button>
+            </li>
+            <li>
+                <button mat-flat-button class="optionsButton" color="primary" routerLink="/admin">{{ 'MAINPAGE.ADMINISTRATION' | translate }}</button>
+            </li>
+            <li>
+                <button mat-flat-button class="optionsButton" color="primary" routerLink="/settings">{{ 'MAINPAGE.SETTINGS' | translate }}</button>
+            </li>
+            <li>
+                <button mat-flat-button class="optionsButton" color="primary" routerLink="/friends">{{ 'FRIENDS.BTN' | translate }}</button>
+            </li>
+        </ul>
+    </div>
+    <app-game-logo></app-game-logo>
+</div>

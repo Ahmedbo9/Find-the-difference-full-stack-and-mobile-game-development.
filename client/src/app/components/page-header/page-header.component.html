@@ -1,0 +1,26 @@
+<mat-toolbar class="header-toolbar" color="primary">
+    <button matTooltip="{{ 'HEADER.HOME' | translate }}" class="home-button" mat-fab color="primary" routerLink="/home" *ngIf="isHomeButtonEnabled">
+        <mat-icon>home</mat-icon>
+    </button>
+    {{ headerMessage }}
+    <span class="filler"></span>
+
+    <app-search-bat> </app-search-bat>
+    
+    <div class="space-between-buttons"></div>
+
+    <app-chat-button matTooltip="{{ 'HEADER.CHAT' | translate }}"></app-chat-button>
+
+    <button
+        matTooltip="{{ 'HEADER.LOGOUT' | translate }}"
+        (click)="signOut()"
+        class="home-button"
+        mat-fab
+        color="primary"
+        *ngIf="isSignOutButtonEnabled"
+    >
+        <mat-icon>exit_to_app</mat-icon>
+    </button>
+    <app-user-avatar *ngIf="isAvatarEnabled" matTooltip="{{ 'HEADER.SETTINGS' | translate }}"></app-user-avatar>
+    <app-exit-game-button *ngIf="isExitButtonEnabled"></app-exit-game-button>
+</mat-toolbar>

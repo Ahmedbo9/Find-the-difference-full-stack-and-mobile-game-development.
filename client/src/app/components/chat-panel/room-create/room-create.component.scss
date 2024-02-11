@@ -1,0 +1,71 @@
+// /* Add this CSS to your component's styles or a global styles file */
+
+// .input-area {
+//     position: relative;
+//     width: 100%; /* Adjust the width as needed */
+//     margin-bottom: 16px; /* Adjust the margin as needed */
+// }
+
+// /* Adjust the styles for the input field */
+// .input-area input {
+//     width: calc(100% - 32px); /* Adjust the width as needed */
+//     border: 1px solid #000; /* Thin black outline */
+//     border-radius: 10px; /* Rounded corners */
+//     padding: 8px; /* Adjust the padding as needed */
+// }
+
+// /* Adjust the styles for the button */
+// .input-area button {
+//     background-color: #000; /* Black button color */
+//     color: #fff; /* Button text color */
+//     border: none; /* Remove button border */
+//     border-radius: 10px; /* Rounded corners */
+//     margin-left: -2px; /* Adjust the margin as needed */
+// }
+
+// /* Adjust the styles for the error message */
+// .mat-error {
+//     position: absolute;
+//     bottom: -20px; /* Adjust the distance from the input as needed */
+//     left: 8px; /* Adjust the left position as needed */
+//     color: #f44336; /* Error message color */
+// }
+
+// .mat-form-field-appearance-outline .mat-form-field-outline {
+//     color: #000; /* Outline color */
+// }
+
+// .mat-form-field-appearance-outline .mat-form-field-label {
+//     color: #000; /* Label color */
+// }
+
+// .mat-form-field-appearance-outline .mat-form-field-infix {
+//     color: #000; /* Input text color */
+// }
+
+// .mat-form-field-appearance-outline .mat-form-field-outline-end {
+//     color: #000; /* Outline color when focused */
+// }
+
+// .mat-form-field-appearance-outline .mat-form-field-outline-start {
+//     color: #000; /* Outline color when focused */
+// }
+
+// /* Adjust the colors as needed */
+
+.create {
+    width: 100%;
+    color: black;
+}
+
+.create-label {
+    color: black;
+}
+
+.create-input {
+    color: black;
+}
+
+.wrapper {
+    flex: 0 1 auto;
+}
