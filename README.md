@@ -31,7 +31,7 @@ git clone [repository-url]
 
 Install dependencies:
 
-For the web client:
+For the client:
 cd web-client
 npm install
 
